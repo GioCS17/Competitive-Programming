@@ -4,14 +4,14 @@ using namespace std;
 int main(){
   int s,n;
   scanf("%d %d",&s,&n);
-  std::map<int,int> dragons;
+  map<int,int> dragons;
   while(n--){
     int x,y;
   scanf("%d %d",&x,&y);
   if(s>x)
     s+=y;
   else
-    dragons.insert(std::pair<int,int>(x,y));
+    dragons.insert(pair<int,int>(x,y));
  }
  int cont=0;
  while(cont!=dragons.size()){
