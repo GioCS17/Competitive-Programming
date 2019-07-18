@@ -1,0 +1,65 @@
+\documentclass{book}
+\title{\Huge Git}
+\author{Giordano AF} 
+\date{}
+\begin{document}
+	
+	\maketitle
+
+	Git instala un bash predefinido para usar los comandos de git. \\
+	Estados dentro de git:
+\begin{enumerate}
+	\item Working Directory $\rightarrow$ los archivos que actualmente trabajo. Para pasar al siguiente estado se ingresa el comando git add ...
+	\item Staging Area $\rightarrow$  los archivos que serviran para una primera version. Para pasar al siguiente estado de ingresa el comando git commit ...
+	\item Repository $\rightarrow$ los archivos que ya estan finalizados para la version final
+\end{enumerate}
+	Comandos m\'as usados
+\begin{enumerate}
+	\item git init \\
+	Es una manera de decir que se va a inicar un proyecto nuevo en git o vas a empezar a trabajar un proyecto con git.
+	\item git add $<$file$>$ \\
+	Para pasar un file de working directory a staging area
+	\item git status \\
+	Para visualizar los estados de los archivos
+	\item git commit $<$file$>$ git commit -m "message" $<$file$>$\\
+	Para pasar a un files a repository para un primer snapshot
+	\item git push \\
+	Subir los files a servidor para que los demas desarrolladores con permiso puedan verlos.
+	\item git pull \\
+	Traer los cambios de los otros desarrolladores 
+	\item git clone \\
+	Clonar o copiar	el proyecto desde el servidor hasta tu equipo
+	\item git log\\
+	Primer ver los cambios historicos que se dieron al proyecto, se puede ver los snapshots.
+	\item git checkout -- $<$file$>$\\
+	revierte los cambios en el  $<$file$>$
+	\item git diff $<$file$>$\\
+	Permite ver las diferencias en $<$file$>$
+	\item git branch ``branchname''\\
+	Permite crear una rama
+	\item git branch \\
+	Permite visualizar las ramas existentes.
+	\item git checkout ``branchname''login \\
+	Permite cambiar de rama
+	
+\end{enumerate}
+Observaciones::\\
+Antes de hacer un commit es necesario configurar los registros de autenticacion para ello seguimos los siguientes comandos:\\
+\begin{itemize}
+	\item git config --global user.email ...
+	\item git config --global user.name ...
+\end{itemize}
+Si hay algun problema al tipear mas los datos, simplemente vuelve a ejecutar el comando con la configuracion correcta.\\
+
+Cuando queremos que ciertas carpetas y/o archivos sea ignorados por git, entonces creamos la carpeta .gitignore y colocamos todo lo que queremos que sea ignorado por git dentro de esta carpeta.\\
+No olvidar agregar(git add) y commmit .gitignore, ya que esta carpeta si debe ser agregado y comitiado a git.\\
+
+Una vez tengamos nuestro proyecto avanzado podemos subirlo a un repo de github. Seguimos los siguientes pasos:\\
+\begin{itemize}
+	\item git init en la carpeta que esta mos trabajando
+	\item git add README.md
+	\item git commit -m ``message''
+	\item git remote add origin $<$el enlace de nuestro repo en github$>$
+	\item git push -u origin master,aqui agregamos lo que tenemos en la rama master de github
+\end{itemize}
+\end{document}
