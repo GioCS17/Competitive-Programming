@@ -1,34 +1,32 @@
 #include<stdio.h> 
-#include<map>
+#include<vector>
+#include<algorithm>
 using namespace std;
 int main(){
   int s,n;
   scanf("%d %d",&s,&n);
-  map<int,int> dragons;
+  vector<pair<int,int>> dragons;
   while(n--){
     int x,y;
   scanf("%d %d",&x,&y);
   if(s>x)
     s+=y;
   else
-    dragons.insert(pair<int,int>(x,y));
+    dragons.push_back(pair<int,int>(x,y));
  }
  int cont=0;
- while(cont!=dragons.size()){
-   cont=0;
-   auto it=dragons.begin();
-   while(it!=dragons.end()){
-     if(s>it->first)
-     {
-       s+=it->second;
-       dragons.erase(it);
-       cont--;
-     }
-     cont++;
-     it++;
+ sort(dragons.begin(),dragons.end());
+ int size=dragons.size();
+ bool faro=false;
+ for(int i=0;i<size;i++){
+   if(dragons[i].first>=s){
+     faro=true;
+     break;
    }
+   else
+     s+=dragons[i].second;
  }
- if(dragons.size())
+ if(faro)
    printf("NO");
  else
    printf("YES");

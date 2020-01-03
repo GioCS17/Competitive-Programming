@@ -2,10 +2,8 @@
 using namespace std;
 
 int main(){
-  //Long variables
-  long n,m,a;
-  long r;
+  long long n,m,a;
   cin>>n>>m>>a;
-  cout<<((n+a-1)/a*(m+a-1)/a)<<endl;
+  cout<<((n+a-1ll)/a)*((m+a-1ll)/a)<<endl;
   return 0;
 }

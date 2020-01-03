@@ -1,0 +1,29 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+
+using namespace std;
+typedef long long ll;
+
+const int size=102;
+int sizeC;
+int maxiW;
+int arr[size];
+ll state[size][size];
+
+int maxi(int n,int a){
+
+}
+
+int main(){
+
+  scanf("%d",&sizeC);
+  scanf("%d",&maxiW);
+
+  for(int i=0;i<sizeC;i++)
+    scanf("%d",&arr[i]);
+
+  cout<<max(maxi(sizeC-1,0),max(maxi(sizeC-1,1),maxi(sizeC-1,2)))<<endl;
+
+  return 0;
+}
